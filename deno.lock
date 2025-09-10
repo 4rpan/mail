@@ -1,0 +1,130 @@
+{
+  "version": "5",
+  "specifiers": {
+    "npm:@orpc/client@^1.8.7": "1.8.7",
+    "npm:@orpc/contract@^1.8.7": "1.8.7",
+    "npm:@orpc/server@^1.8.7": "1.8.7",
+    "npm:arktype@^2.1.22": "2.1.22"
+  },
+  "npm": {
+    "@ark/schema@0.49.0": {
+      "integrity": "sha512-GphZBLpW72iS0v4YkeUtV3YIno35Gimd7+ezbPO9GwEi9kzdUrPVjvf6aXSBAfHikaFc/9pqZOpv3pOXnC71tw==",
+      "dependencies": [
+        "@ark/util"
+      ]
+    },
+    "@ark/util@0.49.0": {
+      "integrity": "sha512-/BtnX7oCjNkxi2vi6y1399b+9xd1jnCrDYhZ61f0a+3X8x8DxlK52VgEEzyuC2UQMPACIfYrmHkhD3lGt2GaMA=="
+    },
+    "@orpc/client@1.8.7": {
+      "integrity": "sha512-LDDvkK3Px6FeLT0yOd2NOC/tB+0KrzhVNMZc2V4PCe8LClhw4k+iZi5pDAVsd5eAgbLcEI5pGcymngylLycDNw==",
+      "dependencies": [
+        "@orpc/shared",
+        "@orpc/standard-server",
+        "@orpc/standard-server-fetch",
+        "@orpc/standard-server-peer"
+      ]
+    },
+    "@orpc/contract@1.8.7": {
+      "integrity": "sha512-PLV2BztVz5IXXIHiOCKOQXIxbTakrVPBFa31dWSbJLiIFjlGX0ZDGgrjGbrnh4j8CFjHl6EHAREEf/iTO7jtTg==",
+      "dependencies": [
+        "@orpc/client",
+        "@orpc/shared",
+        "@standard-schema/spec",
+        "openapi-types"
+      ]
+    },
+    "@orpc/interop@1.8.7": {
+      "integrity": "sha512-kQ2rAm5YfrY52zGSlhFLrpi7XqIn0YqXmrsyUKxGWXr0dQl3o1Y0ONY9ldcx5IwPLCNB15NOFgZLVCrfWAPH+g=="
+    },
+    "@orpc/server@1.8.7": {
+      "integrity": "sha512-9SCOF+O8zvx4DIyEj2931OTTIt2K9gyD+sW+etyGX53b+YaIIIQrLGrQBe7dkommxi1E/rShSEQUPrkrN57HAw==",
+      "dependencies": [
+        "@orpc/client",
+        "@orpc/contract",
+        "@orpc/interop",
+        "@orpc/shared",
+        "@orpc/standard-server",
+        "@orpc/standard-server-aws-lambda",
+        "@orpc/standard-server-fetch",
+        "@orpc/standard-server-node",
+        "@orpc/standard-server-peer",
+        "cookie"
+      ]
+    },
+    "@orpc/shared@1.8.7": {
+      "integrity": "sha512-LahtHPfwG8MPWL/WDkItTVqERcaV1MUqRrZPQiE+CGUYwEGrsqotMOyWS3Vu5ESu22AilvwdH725sQoUNfzOfQ==",
+      "dependencies": [
+        "radash",
+        "type-fest"
+      ]
+    },
+    "@orpc/standard-server-aws-lambda@1.8.7": {
+      "integrity": "sha512-VyCGI23FeXL4BBKcio7dZD0lNp+8nJ9RCdc6trntoUO7kha+fTEIjLWnEoyF7wMgZYHKiTrPJT46KapJ9oLsjQ==",
+      "dependencies": [
+        "@orpc/shared",
+        "@orpc/standard-server",
+        "@orpc/standard-server-fetch",
+        "@orpc/standard-server-node"
+      ]
+    },
+    "@orpc/standard-server-fetch@1.8.7": {
+      "integrity": "sha512-i4/dDVFsDj6a0dxoMZoPXrp01fsh/ulxZpn93Rqa8x0rpCbpInaAe/yGgTGJNB6GePnSyvMLDj+Lwu3Z9xihKA==",
+      "dependencies": [
+        "@orpc/shared",
+        "@orpc/standard-server"
+      ]
+    },
+    "@orpc/standard-server-node@1.8.7": {
+      "integrity": "sha512-UKzj7BLYbyl4zQqgVvkUlhh6Sk6ljjuyNcBG7nmoQVyUXF4+SkC2Za1KJZmB3pgauw4e+0i8n+U6E9rasJkpaA==",
+      "dependencies": [
+        "@orpc/shared",
+        "@orpc/standard-server",
+        "@orpc/standard-server-fetch"
+      ]
+    },
+    "@orpc/standard-server-peer@1.8.7": {
+      "integrity": "sha512-6mhdFAQLlbUghZ2GbgPwy5pbx4wIY/luD5ZBuatTIcxruJV52kN6a0CUHTXTh3FBRffwOkRaZ8bhI3CtnGQJLQ==",
+      "dependencies": [
+        "@orpc/shared",
+        "@orpc/standard-server"
+      ]
+    },
+    "@orpc/standard-server@1.8.7": {
+      "integrity": "sha512-G6a8fuQHi6WR3VNPLIqE775ZB4GXUSbi+u1liAFmpIkoAV2Btpgs4SOpsIgKQZWCJZ7dcEAwgiLynY1kk+FJPA==",
+      "dependencies": [
+        "@orpc/shared"
+      ]
+    },
+    "@standard-schema/spec@1.0.0": {
+      "integrity": "sha512-m2bOd0f2RT9k8QJx1JN85cZYyH1RqFBdlwtkSlf4tBDYLCiiZnv1fIIwacK6cqwXavOydf0NPToMQgpKq+dVlA=="
+    },
+    "arktype@2.1.22": {
+      "integrity": "sha512-xdzl6WcAhrdahvRRnXaNwsipCgHuNoLobRqhiP8RjnfL9Gp947abGlo68GAIyLtxbD+MLzNyH2YR4kEqioMmYQ==",
+      "dependencies": [
+        "@ark/schema",
+        "@ark/util"
+      ]
+    },
+    "cookie@1.0.2": {
+      "integrity": "sha512-9Kr/j4O16ISv8zBBhJoi4bXOYNTkFLOqSL3UDB0njXxCXNezjeyVrJyGOWtgfs/q2km1gwBcfH8q1yEGoMYunA=="
+    },
+    "openapi-types@12.1.3": {
+      "integrity": "sha512-N4YtSYJqghVu4iek2ZUvcN/0aqH1kRDuNqzcycDxhOUpg7GdvLa2F3DgS6yBNhInhv2r/6I0Flkn7CqL8+nIcw=="
+    },
+    "radash@12.1.1": {
+      "integrity": "sha512-h36JMxKRqrAxVD8201FrCpyeNuUY9Y5zZwujr20fFO77tpUtGa6EZzfKw/3WaiBX95fq7+MpsuMLNdSnORAwSA=="
+    },
+    "type-fest@4.41.0": {
+      "integrity": "sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA=="
+    }
+  },
+  "workspace": {
+    "dependencies": [
+      "npm:@orpc/client@^1.8.7",
+      "npm:@orpc/contract@^1.8.7",
+      "npm:@orpc/server@^1.8.7",
+      "npm:arktype@^2.1.22"
+    ]
+  }
+}
