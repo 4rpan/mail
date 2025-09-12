@@ -12,6 +12,8 @@ import getMails from "./inbox/mails/get.ts";
  * - Mail Over HTTPS
  * - routes (RESTful Endpoints) contract
  * - in RPC standard
+ * @property mail 'Sending, Fetching mails related endpoints'
+ * @property pubkey 'Fetching & setting/updating cipher endpoint'
  */
 const routes = {
   /**

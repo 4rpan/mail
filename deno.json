@@ -1,9 +1,12 @@
 {
   "name": "@arpan/mail",
-  "version": "0.9.6",
+  "version": "0.9.7",
   "license": "MIT",
   "exports": {
     ".": "./src/routes/index.ts"
+  },
+  "tasks": {
+    "push" : "deno publish --allow-slow-types"
   },
   "imports": {
     "@/": "./src/",

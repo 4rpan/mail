@@ -25,70 +25,30 @@ Emails should be
 Future: post quantum crpto support (in moh v2).
 
 ### Endpoints:
+#### Mail Operations
 
-#### Send Mail (`mail://receiver@server`)
+| action                   | endpoint                  | input             | output                           | notes                                                                                                   |
+|---------------------------|---------------------------|-------------------|----------------------------------|---------------------------------------------------------------------------------------------------------|
+| Send a mail              | **POST** `/inbox/:mailId` | JSON `MailBody`   | `to` (destination address), `mailId` | For `moh`: relays to correct mail server via 'to' field. Falls back to SMTP if unavailable or unsigned. |
+| Relay mail (legacy SMTP) | **POST** `/inbox/legacy`  | JSON `MailBody`   | `to` (destination address), `mailId` | Specifically for legacy (SMTP) forwarding.                                                              |
+| Fetch a mail             | **GET** `/inbox/:mailId`  | Path param: `mailId`, optional: `backup`, `markAsUnread` | `MailBody` | Retrieves a mail and deletes it from the server.                                                        |
+| Fetch multiple mails     | **GET** `/inbox/mails`    | JSON schema: `mailIds`, `for`, plus extra retention options | `MailBody[]` | Retrieves multiple mails in bulk with extended retention options.                                       |
 
-> **POST** `/inbox/:mailId`
+#### Mail Query & Status
 
-- `mailId`: alphanumeric text (string)
-- json schema : `MailBody`
+| action                | endpoint                    | input             | output                                      | notes                                                             |
+|------------------------|-----------------------------|------------------|---------------------------------------------|-------------------------------------------------------------------|
+| List new incoming mails | **GET** `/inbox`           | -                 | `string[]` (mail ids)                       | Returns a list of new mail IDs.                                   |
+| Check mail status      | **GET** `/inbox/:id/status` | Path param: `id`  | `"sending" \| "sent" \| "unread" \| "read"` | Returns the sending or reading status of a particular mail ID.    |
 
-##### relay mails:
+#### Security (Keys)
 
-- for `moh`
+| action                | endpoint          | input                                    | output     | notes                                                |
+|------------------------|------------------|------------------------------------------|------------|------------------------------------------------------|
+| Retrieve public key    | **GET** `/cipher`| -                                        | Public key | Retrieves the user’s stored public key.              |
+| Set/update public key  | **POST** `/cipher`| Public key + multi-factor authentication | -          | Requires MFA; updates or registers a public key.     |
 
-  - send your mail to any moh server at this endpoint
-  - it'll relay to correct mail server (on the basis of 'to' field)
-  - if `moh` server is unavailable (or if signature is not provided), it'll try to forward to the smtp server.
 
-- for legacy (smtp) forwarding specifically :
-
-> **POST** `/inbox/legacy`
-
-#### List new mails (`mail://me@server`)
-
-> **GET** `/inbox`
-
-- response: `string[]` (mail ids)
-
-#### Fetch mail
-
-> **GET** `/inbox/:mailId`
-
-- get mail & delete from server.
-- extra params:
-  - backup
-  - markAsUnread
-
-##### Status
-
-> **GET** `/inbox/:id/status`
-
-- response: `"sending" | "sent" | "unread" | "read"`
-
-##### One 
-
-> **GET** `/inbox/:mailId`
-
-- mail id as path param
-- response schema: `MailBody`
-
-##### Many
-
-> GET `/inbox/mails`
-
-- json schema: 'mailIds', 'for' & extra options for retension.
-- reponse schema: `MailBody[]`
-
-#### Get public key
-
-> GET `/cipher`
-
-#### Set public key
-
-> POST `/cipher`
-
-- with additional steps for multi factor authentication implemented by the server.
 
 ### Schema
 
