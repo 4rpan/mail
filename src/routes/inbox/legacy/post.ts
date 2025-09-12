@@ -1,15 +1,18 @@
 import { oc } from "@orpc/contract";
-import { ErrorValue, SuccessValue, MailBody } from "@/types.ts";
+import {
+  ErrorValue,
+  MailBody,
+  SuccessValue,
+} from "@/types.ts";
 
 /**
- * This endpoint recieves mails from clients or other servers
- * - a primary endpoint
+ * Forward mails to legacy (SMTP) server
  */
-const sendMail = oc
+const sendMailFallback = oc
   .route({
     method: "POST",
     path: "/inbox/{id}",
-    summary: "Send email with client generated mail id",
+    summary: "Send email to 'smtp' address with client generated mail id",
     description:
       "Send new Mails to this endpoint either to 'send' or 'relay the mail' to a 'destination`(email address), inferred from 'to' field",
   })
@@ -21,4 +24,4 @@ const sendMail = oc
     }).or(ErrorValue)
   );
 
-export default sendMail;
+export default sendMailFallback;

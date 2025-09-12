@@ -1,9 +1,7 @@
 {
   "version": "5",
   "specifiers": {
-    "npm:@orpc/client@^1.8.7": "1.8.7",
     "npm:@orpc/contract@^1.8.7": "1.8.7",
-    "npm:@orpc/server@^1.8.7": "1.8.7",
     "npm:arktype@^2.1.22": "2.1.22"
   },
   "npm": {
@@ -34,24 +32,6 @@
         "openapi-types"
       ]
     },
-    "@orpc/interop@1.8.7": {
-      "integrity": "sha512-kQ2rAm5YfrY52zGSlhFLrpi7XqIn0YqXmrsyUKxGWXr0dQl3o1Y0ONY9ldcx5IwPLCNB15NOFgZLVCrfWAPH+g=="
-    },
-    "@orpc/server@1.8.7": {
-      "integrity": "sha512-9SCOF+O8zvx4DIyEj2931OTTIt2K9gyD+sW+etyGX53b+YaIIIQrLGrQBe7dkommxi1E/rShSEQUPrkrN57HAw==",
-      "dependencies": [
-        "@orpc/client",
-        "@orpc/contract",
-        "@orpc/interop",
-        "@orpc/shared",
-        "@orpc/standard-server",
-        "@orpc/standard-server-aws-lambda",
-        "@orpc/standard-server-fetch",
-        "@orpc/standard-server-node",
-        "@orpc/standard-server-peer",
-        "cookie"
-      ]
-    },
     "@orpc/shared@1.8.7": {
       "integrity": "sha512-LahtHPfwG8MPWL/WDkItTVqERcaV1MUqRrZPQiE+CGUYwEGrsqotMOyWS3Vu5ESu22AilvwdH725sQoUNfzOfQ==",
       "dependencies": [
@@ -59,28 +39,11 @@
         "type-fest"
       ]
     },
-    "@orpc/standard-server-aws-lambda@1.8.7": {
-      "integrity": "sha512-VyCGI23FeXL4BBKcio7dZD0lNp+8nJ9RCdc6trntoUO7kha+fTEIjLWnEoyF7wMgZYHKiTrPJT46KapJ9oLsjQ==",
-      "dependencies": [
-        "@orpc/shared",
-        "@orpc/standard-server",
-        "@orpc/standard-server-fetch",
-        "@orpc/standard-server-node"
-      ]
-    },
     "@orpc/standard-server-fetch@1.8.7": {
       "integrity": "sha512-i4/dDVFsDj6a0dxoMZoPXrp01fsh/ulxZpn93Rqa8x0rpCbpInaAe/yGgTGJNB6GePnSyvMLDj+Lwu3Z9xihKA==",
       "dependencies": [
         "@orpc/shared",
         "@orpc/standard-server"
-      ]
-    },
-    "@orpc/standard-server-node@1.8.7": {
-      "integrity": "sha512-UKzj7BLYbyl4zQqgVvkUlhh6Sk6ljjuyNcBG7nmoQVyUXF4+SkC2Za1KJZmB3pgauw4e+0i8n+U6E9rasJkpaA==",
-      "dependencies": [
-        "@orpc/shared",
-        "@orpc/standard-server",
-        "@orpc/standard-server-fetch"
       ]
     },
     "@orpc/standard-server-peer@1.8.7": {
@@ -106,9 +69,6 @@
         "@ark/util"
       ]
     },
-    "cookie@1.0.2": {
-      "integrity": "sha512-9Kr/j4O16ISv8zBBhJoi4bXOYNTkFLOqSL3UDB0njXxCXNezjeyVrJyGOWtgfs/q2km1gwBcfH8q1yEGoMYunA=="
-    },
     "openapi-types@12.1.3": {
       "integrity": "sha512-N4YtSYJqghVu4iek2ZUvcN/0aqH1kRDuNqzcycDxhOUpg7GdvLa2F3DgS6yBNhInhv2r/6I0Flkn7CqL8+nIcw=="
     },
@@ -121,9 +81,7 @@
   },
   "workspace": {
     "dependencies": [
-      "npm:@orpc/client@^1.8.7",
       "npm:@orpc/contract@^1.8.7",
-      "npm:@orpc/server@^1.8.7",
       "npm:arktype@^2.1.22"
     ]
   }

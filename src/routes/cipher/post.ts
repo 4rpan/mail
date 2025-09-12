@@ -1,6 +1,10 @@
 import { oc } from "@orpc/contract";
-import { SetCipherInput, SetCipherOutput } from "@/types.ts";
+import { type } from "arktype";
+import { ErrorValue, SuccessValue } from "@/types.ts";
 
+/**
+ * Set new public key for this server
+ */
 const setCipher = oc
   .route({
     method: "POST",
@@ -10,7 +14,17 @@ const setCipher = oc
     description:
       "Set the encryption or signature validation cipher/key. It should require additional authentication steps depending upon the provider. If 2fa is not completed before `ttl`, new public key won't be set",
   })
-  .input(SetCipherInput)
-  .output(SetCipherOutput);
+  .input(
+    type({
+      pubkey: "string.hex == 64",
+      ttl: "number.epoch",
+    })
+  )
+  .output(
+    SuccessValue({
+      pubkey: "string.hex == 64",
+      ttl: "number.epoch",
+    }).or(ErrorValue)
+  );
 
 export default setCipher;

@@ -1,13 +1,13 @@
 {
   "name": "@arpan/mail",
-  "version": "0.9.5",
+  "version": "0.9.6",
   "license": "MIT",
-  "exports": "./src/mod.ts",
+  "exports": {
+    ".": "./src/routes/index.ts"
+  },
   "imports": {
     "@/": "./src/",
-    "@orpc/client": "npm:@orpc/client@^1.8.7",
     "@orpc/contract": "npm:@orpc/contract@^1.8.7",
-    "@orpc/server": "npm:@orpc/server@^1.8.7",
     "arktype": "npm:arktype@^2.1.22"
   }
 }

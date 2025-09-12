@@ -1,17 +1,22 @@
 import setCipher from "./cipher/post.ts";
 import getCipher from "./cipher/get.ts";
-
 import sendMail from "./inbox/$id/post.ts";
-import sendMailFallback from "./inbox/fallback/post.ts";
-
+import sendMailFallback from "./inbox/legacy/post.ts";
 import getMailStatus from "./inbox/$id/status/get.ts";
-
 import listMails from "./inbox/get.ts";
 import getMail from "./inbox/$id/get.ts";
 import getMails from "./inbox/mails/get.ts";
 
-
-export const routes = {
+/**
+ * The `moh` spec
+ * - Mail Over HTTPS
+ * - routes (RESTful Endpoints) contract
+ * - in RPC standard
+ */
+const routes = {
+  /**
+   * Mail related procedures
+   */
   mail: {
     /**
      * Create new mail
@@ -42,3 +47,5 @@ export const routes = {
     set: setCipher,
   },
 };
+
+export { routes as spec };

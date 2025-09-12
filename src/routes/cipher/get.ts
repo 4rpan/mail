@@ -1,6 +1,10 @@
 import { oc } from "@orpc/contract";
-import { GetCipherInput, GetCipherOutput } from "@/types.ts";
+import { type } from "arktype";
+import { ErrorValue, SuccessValue } from "@/types.ts";
 
+/**
+ * Retrieve public key of the user
+ */
 const getCipher = oc
   .route({
     method: "GET",
@@ -9,7 +13,15 @@ const getCipher = oc
     tags: ["encryption"],
     description: "Get the encryption or signature validation cipher/key.",
   })
-  .input(GetCipherInput)
-  .output(GetCipherOutput);
+  .input(
+    type({
+      of: "string.alphanumeric",
+    })
+  )
+  .output(
+    SuccessValue({
+      pubkey: "string",
+    }).or(ErrorValue)
+  );
 
 export default getCipher;

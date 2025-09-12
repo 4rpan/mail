@@ -1,13 +1,27 @@
-import { GetMailBulkInput, GetMailBulkOutput } from "@/types.ts";
 import { oc } from "@orpc/contract";
+import {
+  ErrorValue,
+  MailBody,
+  SuccessValue,
+} from "@/types.ts";
+import { type } from "arktype";
 
+/**
+ * Get many mails at once
+ * - it doesn't verify signatures
+ */
 const getMails = oc
   .route({
     method: "GET",
     path: "/inbox/mails",
     summary: "Retrieve multiple (many) mails in bulk",
   })
-  .input(GetMailBulkInput)
-  .output(GetMailBulkOutput);
+  .input(type({
+    for: "string.alphanumeric",
+    mailIds: "string.alphanumeric[]",
+    "markAsUnread?": "boolean",
+    "backup?": "boolean",
+  }))
+  .output(SuccessValue(MailBody.array()).or(ErrorValue));
 
 export default getMails;
