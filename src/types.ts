@@ -1,13 +1,12 @@
 import { type } from "arktype";
-import type { Generic, Type } from "arktype";
 
 /**
  * Error Scema JSON payload
  */
 export const ErrorValue = type({
   success: "false",
+  "message?": "string",
   "errors?": "string[]",
-  message: "string",
 });
 
 /**
@@ -15,7 +14,7 @@ export const ErrorValue = type({
  */
 export const SuccessValue = type("<T>", {
   success: "true",
-  message: "string",
+  "message?": "string",
   data: "T",
 });
 

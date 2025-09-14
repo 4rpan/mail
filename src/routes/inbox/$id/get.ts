@@ -1,6 +1,6 @@
 import { oc } from "@orpc/contract";
 import { type } from "arktype";
-import { SuccessValue, ErrorValue, MailBody } from "@/types.ts";
+import { SuccessValue, ErrorValue, MailBody } from "@/types";
 
 /**
  * Retrieve a mail by it's id

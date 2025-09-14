@@ -1,4 +1,4 @@
-import { ErrorValue, SuccessValue } from "@/types.ts";
+import { ErrorValue, SuccessValue } from "@/types";
 import { oc } from "@orpc/contract";
 import { type } from "arktype";
 

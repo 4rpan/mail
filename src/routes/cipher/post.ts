@@ -1,6 +1,6 @@
 import { oc } from "@orpc/contract";
 import { type } from "arktype";
-import { ErrorValue, SuccessValue } from "@/types.ts";
+import { ErrorValue, SuccessValue } from "@/types";
 
 /**
  * Set new public key for this server
@@ -22,8 +22,7 @@ const setCipher = oc
   )
   .output(
     SuccessValue({
-      pubkey: "string.hex == 64",
-      ttl: "number.epoch",
+      cipher: "string.hex == 64",
     }).or(ErrorValue)
   );
 

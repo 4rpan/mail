@@ -1,9 +1,5 @@
 import { oc } from "@orpc/contract";
-import {
-  ErrorValue,
-  MailBody,
-  SuccessValue,
-} from "@/types.ts";
+import { ErrorValue, MailBody, SuccessValue } from "@/types";
 import { type } from "arktype";
 
 /**
@@ -16,12 +12,14 @@ const getMails = oc
     path: "/inbox/mails",
     summary: "Retrieve multiple (many) mails in bulk",
   })
-  .input(type({
-    for: "string.alphanumeric",
-    mailIds: "string.alphanumeric[]",
-    "markAsUnread?": "boolean",
-    "backup?": "boolean",
-  }))
+  .input(
+    type({
+      for: "string.alphanumeric",
+      mailIds: "string.alphanumeric[]",
+      "markAsUnread?": "boolean",
+      "backup?": "boolean",
+    })
+  )
   .output(SuccessValue(MailBody.array()).or(ErrorValue));
 
 export default getMails;

@@ -1,9 +1,5 @@
 import { oc } from "@orpc/contract";
-import {
-  ErrorValue,
-  MailBody,
-  SuccessValue,
-} from "@/types.ts";
+import { ErrorValue, MailBody, SuccessValue } from "@/types";
 
 /**
  * Forward mails to legacy (SMTP) server

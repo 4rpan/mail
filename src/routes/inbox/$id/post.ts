@@ -1,5 +1,5 @@
 import { oc } from "@orpc/contract";
-import { ErrorValue, SuccessValue, MailBody } from "@/types.ts";
+import { ErrorValue, SuccessValue, MailBody } from "@/types";
 
 /**
  * This endpoint recieves mails from clients or other servers

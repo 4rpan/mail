@@ -1,6 +1,6 @@
 import { oc } from "@orpc/contract";
 import { type } from "arktype";
-import { ErrorValue, SuccessValue } from "@/types.ts";
+import { ErrorValue, SuccessValue } from "@/types";
 
 /**
  * Retrieve public key of the user
