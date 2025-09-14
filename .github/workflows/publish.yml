@@ -20,6 +20,6 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-        
+
       - name: Publish to JSR
-        run: pnpm dlx jsr publish
+        run: pnpm dlx jsr publish --allow-slow-types
