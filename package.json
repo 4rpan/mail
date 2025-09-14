@@ -1,0 +1,11 @@
+{
+  "name": "@arpan/mail",
+  "scripts": {
+    "check": "deno publish --allow-slow-types --no-check --dry-run"
+  },
+  "dependencies": {
+    "@orpc/contract": "^1.8.8",
+    "arktype": "^2.1.22"
+  },
+  "packageManager": "pnpm@10.16.1"
+}
