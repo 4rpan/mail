@@ -1,19 +1,6 @@
 import { type } from "arktype";
 
 /**
- * Important shared schemas
- * 
- * @example
- * ```ts
- * import { ErrorValue, SuccessValue } from "@arpan/mail/types";
- *  const res = SuccessValue({
-      ids: "string[]",
-    }).or(ErrorValue)
- * ```
- * @module
- */
-
-/**
  * Error Scema JSON payload
  */
 export const ErrorValue = type({
@@ -79,3 +66,17 @@ export const MailBody = type({
    */
   "metadata?": "Record<string, unknown>",
 });
+
+/**
+ * Important shared schemas
+ * 
+ * @example
+ * ```ts
+ * import { ErrorValue, SuccessValue } from "@arpan/mail/types";
+ *  const res = SuccessValue({
+      ids: "string[]",
+    }).or(ErrorValue)
+ * ```
+ * @module types
+ */
+export default { SuccessValue, ErrorValue, MailBody };
