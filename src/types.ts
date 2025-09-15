@@ -1,12 +1,6 @@
 import { type } from "arktype";
 
 /**
- * Important shared schemas
- *
- * @module
- */
-
-/**
  * Error Scema JSON payload
  */
 export const ErrorValue = type({
