@@ -1,3 +1,8 @@
+/**
+ * Important schemas
+ * @module
+ */
+
 import { type } from "arktype";
 
 /**
