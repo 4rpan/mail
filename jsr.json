@@ -3,7 +3,9 @@
   "version": "0.9.9",
   "license": "MIT",
   "imports": {
-    "@/": "./src/"
+    "@/": "./src/",
+    "@orpc/contract": "npm:@orpc/contract@^1.8.7",
+    "arktype": "npm:arktype@^2.1.22"
   },
   "exports": {
     ".": "./src/routes/index.ts",
