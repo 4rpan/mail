@@ -1,13 +1,12 @@
 {
   "name": "@arpan/mail",
-  "version": "0.9.11",
+  "version": "0.9.12",
   "license": "MIT",
   "imports": {
     "@/": "./src/"
   },
   "exports": {
-    ".": "./src/routes/index.ts",
-    "./types": "./src/types.ts"
+    ".": "./src/routes/index.ts"
   },
   "exclude": [".github", ".vscode", "pnpm-lock.yaml"]
 }

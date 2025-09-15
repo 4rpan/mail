@@ -1,9 +1,15 @@
 import { type } from "arktype";
 
 /**
+ * Important shared schemas
+ *
+ * @module
+ */
+
+/**
  * Error Scema JSON payload
  */
-const ErrorValue = type({
+export const ErrorValue = type({
   success: "false",
   "message?": "string",
   "errors?": "string[]",
@@ -12,7 +18,7 @@ const ErrorValue = type({
 /**
  * Error Scema JSON payload base
  */
-const SuccessValue = type("<T>", {
+export const SuccessValue = type("<T>", {
   success: "true",
   "message?": "string",
   data: "T",
@@ -21,7 +27,7 @@ const SuccessValue = type("<T>", {
 /**
  * Mail Body Schema
  */
-const MailBody = type({
+export const MailBody = type({
   /**
    * looks like traditional (SMTP) email addresses
    * `sender@server.tld`
@@ -66,17 +72,3 @@ const MailBody = type({
    */
   "metadata?": "Record<string, unknown>",
 });
-
-/**
- * Important shared schemas
- * 
- * @example
- * ```ts
- * import { ErrorValue, SuccessValue } from "@arpan/mail/types";
- *  const res = SuccessValue({
-      ids: "string[]",
-    }).or(ErrorValue)
- * ```
- * @module types
- */
-export { SuccessValue, ErrorValue, MailBody };
