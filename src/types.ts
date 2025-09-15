@@ -3,7 +3,7 @@ import { type } from "arktype";
 /**
  * Error Scema JSON payload
  */
-export const ErrorValue = type({
+const ErrorValue = type({
   success: "false",
   "message?": "string",
   "errors?": "string[]",
@@ -12,7 +12,7 @@ export const ErrorValue = type({
 /**
  * Error Scema JSON payload base
  */
-export const SuccessValue = type("<T>", {
+const SuccessValue = type("<T>", {
   success: "true",
   "message?": "string",
   data: "T",
@@ -21,7 +21,7 @@ export const SuccessValue = type("<T>", {
 /**
  * Mail Body Schema
  */
-export const MailBody = type({
+const MailBody = type({
   /**
    * looks like traditional (SMTP) email addresses
    * `sender@server.tld`
@@ -79,4 +79,4 @@ export const MailBody = type({
  * ```
  * @module types
  */
-export default { SuccessValue, ErrorValue, MailBody };
+export { SuccessValue, ErrorValue, MailBody };
